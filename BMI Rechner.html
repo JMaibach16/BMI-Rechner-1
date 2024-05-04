@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BMI</title>
+    <style>
+        * {
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        }
+        #e {
+            position: absolute;
+            left: 300px;
+            top: 0px;
+        }
+        #i {
+            height: 120px;
+            width: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <p> Alter:</p> <input type="number">
+    <p> Körpergröße in Meter:</p> <input id="gr" type="text">
+    <p> Körpergewicht:</p> <input id="ge" type="text"><br>
+<br>
+
+    <button onClick="Multiplikation()">Ausrechnen!</button>
+    
+    <p id="e"> Ihr Ergebnis kommt hier: <br> <input id="i" type="text"></p> 
+<script>
+    function Multiplikation() {       
+        document.querySelector("#i").value = parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value));
+    }
+</script>
+</body>
+    
+</html>
