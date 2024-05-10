@@ -9,7 +9,7 @@
         }
         #e {
             position: absolute;
-            left: 300px;
+            left: 400px;
             top: 0px;
         }
         #i {
@@ -20,17 +20,17 @@
 </head>
 
 <body>
-    <p> Alter:</p> <input type="number">
-    <p> Körpergröße in Meter:</p> <input id="gr" type="text">
-    <p> Körpergewicht:</p> <input id="ge" type="text"><br>
-<br>
+    <div><label> Alter:</label> <input type="number"></div><br>
+    <div><label> Körpergröße in Meter:</label> <input id="gr" type="text"></div><br>
+    <div><label> Körpergewicht:</label> <input id="ge" type="text"><br></div><br>
 
-    <button onClick="Multiplikation()">Ausrechnen!</button>
+    <div><button onClick="Multiplikation()">Ausrechnen!</button></div>
     
-    <p id="e"> Ihr Ergebnis kommt hier: <br> <input id="i" type="text"></p> 
+    <div><label id="e"> Ihr Ergebnis kommt hier: <br> <div id="i"></div></label></div>
+    
 <script>
     function Multiplikation() {       
-        document.querySelector("#i").value = parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value));
+        document.querySelector("#i").innerHTML = parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value));
     }
 </script>
 </body>
