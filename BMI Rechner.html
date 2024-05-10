@@ -20,18 +20,29 @@
 </head>
 
 <body>
-    <div><label> Alter:</label> <input type="number"></div><br>
+    <div><label> Alter:</label> <input id="al" type="number"></div><br>
     <div><label> Körpergröße in Meter:</label> <input id="gr" type="text"></div><br>
     <div><label> Körpergewicht:</label> <input id="ge" type="text"><br></div><br>
 
     <div><button onClick="Multiplikation()">Ausrechnen!</button></div>
     
-    <div><label id="e"> Ihr Ergebnis kommt hier: <br> <div id="i"></div></label></div>
+    <div><label id="e"> Ihr Ergebnis kommt hier: <br><br> <div id="i"></div></label></div>
     
 <script>
     function Multiplikation() {       
         document.querySelector("#i").innerHTML = parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value));
+        
+    if (document.querySelector("#al").value < 18) {
+        document.querySelector("#i").innerHTML = "Bitte verwenden Sie ein anderes Programm";
+        return;}
+    
+    if (document.querySelector("#i").innerHTML < 16) {
+        document.querySelector("#i").innerHTML = "Sie haben kritisches Untergewicht." + "<p>" + parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value)) ;}
+        
+    else if (document.querySelector("#i").innerHTML >= 30) {
+        document.querySelector("#i").innerHTML = "Sie haben Übergewicht." + "<p>" + parseFloat(document.querySelector("#ge").value) / (parseFloat(document.querySelector("#gr").value) * parseFloat(document.querySelector("#gr").value)) ;}
     }
+    
 </script>
 </body>
     
